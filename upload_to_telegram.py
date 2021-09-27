@@ -25,13 +25,3 @@ def random_path():
         random_picture = random.sample(listdir("spacex"), 1)
     resalt_path = f"{random_directory}/{random_picture[0]}"
     return resalt_path
-
-
-if __name__ == "__main__":
-    load_dotenv()
-    chat_id = os.getenv("CHAT_ID")
-    bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
-    seconds_in_one_day = 86400
-    while True:
-        print(bot_settings(bot_token))
-        sleep(seconds_in_one_day)

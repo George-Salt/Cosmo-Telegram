@@ -11,7 +11,7 @@ def fetch_last_launch():
     for image_num, image_url in enumerate(latest_launches_images):
         upload_images("spacex", f"spacex{image_num}", image_url)
 
-    return "Загружено"
+    return "Загружено - SpaceX"
 
 
 def upload_images(directory, name, image_url):

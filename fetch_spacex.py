@@ -3,11 +3,6 @@ import requests
 import os
 
 
-def create_dir_for_images():
-    if not os.path.exists("spacex"):
-        os.makedirs("spacex")
-
-
 def fetch_last_launch():
     spaceX_url = "https://api.spacexdata.com/v4/launches/latest"
     response = requests.get(spaceX_url)
@@ -33,8 +28,3 @@ def get_extension(image_url):
     parsed_url = urlparse(image_url)
     extension = os.path.splitext(parsed_url.path)[1]
     return extension
-
-
-if __name__ == "__main__":
-    create_dir_for_images()
-    print(fetch_last_launch())

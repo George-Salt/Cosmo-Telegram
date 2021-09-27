@@ -4,13 +4,6 @@ import requests
 import os
 
 
-def create_dirs_for_images():
-    if not os.path.exists("nasa"):
-        os.makedirs("nasa")
-    if not os.path.exists("epic"):
-        os.makedirs("epic")
-
-
 def upload_nasa_epic(token):
     epic_url = "https://api.nasa.gov/EPIC/api/natural/images?api_key={}".format(token)
 
@@ -55,11 +48,3 @@ def get_extension(image_url):
     parsed_url = urlparse(image_url)
     extension = os.path.splitext(parsed_url.path)[1]
     return extension
-
-
-if __name__ == "__main__":
-    load_dotenv()
-    nasa_token = os.getenv("NASA_API")
-    create_dirs_for_images()
-    print(upload_nasa_epic(nasa_token))
-    print(upload_nasa_apod(nasa_token))

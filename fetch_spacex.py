@@ -1,8 +1,6 @@
-from os import listdir
 from urllib.parse import urlparse
 import requests
 import os
-import random
 
 
 def create_dir_for_images():

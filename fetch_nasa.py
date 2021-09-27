@@ -62,6 +62,5 @@ if __name__ == "__main__":
     load_dotenv()
     nasa_token = os.getenv("NASA_API")
     create_dirs_for_images()
-    while True:
-        print(upload_nasa_epic(nasa_token))
-        print(upload_nasa_apod(nasa_token))
+    print(upload_nasa_epic(nasa_token))
+    print(upload_nasa_apod(nasa_token))

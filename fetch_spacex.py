@@ -37,12 +37,6 @@ def get_extension(image_url):
     return extension
 
 
-def random_path():
-    random_picture = random.sample(listdir("spacex"), 1)
-    resalt_path = f"spacex/{random_picture[0]}"
-    return resalt_path
-
-
 if __name__ == "__main__":
     create_dir_for_images()
     print(fetch_last_launch())

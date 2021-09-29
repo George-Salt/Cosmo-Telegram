@@ -4,10 +4,10 @@
 
 ### Как установить
 
-В папке проекта создайте файл `.env` и поместите в него свои токены в переменные `TELEGRAM_BOT_TOKEN`, `NASA_API`, `CHAT_ID`:
+В папке проекта создайте файл `.env` и поместите в него свои токены в переменные `TELEGRAM_BOT_TOKEN`, `NASA_TOKEN`, `CHAT_ID`:
 ```
 TELEGRAM_BOT_TOKEN="bot-token"
-NASA_API="nasa-api"
+NASA_TOKEN="nasa-api"
 CHAT_ID="@chat"
 ```
 

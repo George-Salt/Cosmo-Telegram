@@ -4,7 +4,7 @@ import requests
 import os
 
 
-def upload_nasa_epic(token):
+def download_nasa_epic(token):
     epic_url = "https://api.nasa.gov/EPIC/api/natural/images?api_key={}".format(token)
 
     response = requests.get(epic_url)
@@ -14,12 +14,12 @@ def upload_nasa_epic(token):
         epic_image_name = image["image"]
         epic_image_date = image["date"][:10].replace("-", "/")
         image_url = "https://api.nasa.gov/EPIC/archive/natural/{linkdate}/png/{name}.png?api_key={token}".format(linkdate = epic_image_date, name=epic_image_name, token=token)
-        upload_images("epic", f"epic{image_num}", image_url)
+        download_image("epic", f"epic{image_num}", image_url)
 
     return "Загружено - EPIC"
 
 
-def upload_nasa_apod(token):
+def download_nasa_apod(token):
     apod_url = "https://api.nasa.gov/planetary/apod?api_key={}".format(token)
     params = {
         "count": 30
@@ -29,12 +29,12 @@ def upload_nasa_apod(token):
 
     for image_num, image_url in enumerate(apod_images):
         image_url = apod_images[image_num]["url"]
-        upload_images("nasa", f"apod{image_num}", image_url)
+        download_image("nasa", f"apod{image_num}", image_url)
 
     return "Загружено - APOD"
 
 
-def upload_images(directory, name, image_url):
+def download_image(directory, name, image_url):
     filepath = "{directory}/{name}{ext}".format(directory=directory, name=name, ext=get_extension(image_url))
 
     response = requests.get(image_url)

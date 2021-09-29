@@ -9,12 +9,12 @@ def fetch_last_launch():
     latest_launches_images = response.json()["links"]["flickr"]["original"]
 
     for image_num, image_url in enumerate(latest_launches_images):
-        upload_images("spacex", f"spacex{image_num}", image_url)
+        download_image("spacex", f"spacex{image_num}", image_url)
 
     return "Загружено - SpaceX"
 
 
-def upload_images(directory, name, image_url):
+def download_image(directory, name, image_url):
     filepath = "{directory}/{name}{ext}".format(directory=directory, name=name, ext=get_extension(image_url))
 
     response = requests.get(image_url)

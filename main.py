@@ -22,8 +22,8 @@ if __name__ == '__main__':
     seconds_in_one_day = 86400
     create_dirs_for_images()
     while True:
-        print(fetch_nasa.upload_nasa_epic(nasa_token))
-        print(fetch_nasa.upload_nasa_apod(nasa_token))
-        print(fetch_spacex.fetch_last_launch())
-        print(upload_to_telegram.bot_settings(bot_token, chat_id))
+        fetch_nasa.upload_nasa_epic(nasa_token)
+        fetch_nasa.upload_nasa_apod(nasa_token)
+        fetch_spacex.fetch_last_launch()
+        upload_to_telegram.bot_settings(bot_token, chat_id)
         upload_to_telegram.sleep(seconds_in_one_day)

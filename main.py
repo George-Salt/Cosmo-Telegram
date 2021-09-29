@@ -16,7 +16,7 @@ def create_dirs_for_images():
 
 if __name__ == '__main__':
     load_dotenv()
-    chat_id = os.getenv("CHAT_ID")
+    chat_id = os.getenv("TG_CHAT_ID")
     nasa_token = os.getenv("NASA_TOKEN")
     bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
     seconds_in_one_day = 86400

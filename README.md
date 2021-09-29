@@ -4,11 +4,11 @@
 
 ### Как установить
 
-В папке проекта создайте файл `.env` и поместите в него свои токены в переменные `TELEGRAM_BOT_TOKEN`, `NASA_TOKEN`, `CHAT_ID`:
+В папке проекта создайте файл `.env` и поместите в него свои токены в переменные `TELEGRAM_BOT_TOKEN`, `NASA_TOKEN`, `TG_CHAT_ID`:
 ```
 TELEGRAM_BOT_TOKEN="bot-token"
 NASA_TOKEN="nasa-api"
-CHAT_ID="@chat"
+TG_CHAT_ID="@chat"
 ```
 
 Python3 должен быть уже установлен. 

@@ -5,22 +5,17 @@ import upload_to_telegram
 import os
 
 
-def create_dirs_for_images():
-    if not os.path.exists("spacex"):
-        os.makedirs("spacex")
-    if not os.path.exists("nasa"):
-        os.makedirs("nasa")
-    if not os.path.exists("epic"):
-        os.makedirs("epic")
-
-
 if __name__ == '__main__':
+    dirs_for_images = ("spacex", "apod", "epic")
+    for image_dir in dirs_for_images:
+        if not os.path.exists(image_dir):
+            os.makedirs(image_dir)
+
     load_dotenv()
     chat_id = os.getenv("TG_CHAT_ID")
     nasa_token = os.getenv("NASA_TOKEN")
     bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
     seconds_in_one_day = 86400
-    create_dirs_for_images()
     while True:
         fetch_nasa.download_nasa_epic(nasa_token)
         fetch_nasa.download_nasa_apod(nasa_token)

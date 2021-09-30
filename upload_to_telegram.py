@@ -6,9 +6,9 @@ import telegram
 import random
 
 
-def bot_settings(bot_token, chat_id):
+def bot_settings(bot_token, chat_id, dirs):
     bot = telegram.Bot(token=bot_token)
-    bot.send_document(chat_id=chat_id, document=open(random_path(["nasa", "epic", "spacex"]), 'rb'))
+    bot.send_document(chat_id=chat_id, document=open(random_path(dirs), 'rb'))
     return "Отправлено"
 
 

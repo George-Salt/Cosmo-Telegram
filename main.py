@@ -6,7 +6,10 @@ import os
 
 
 if __name__ == '__main__':
-    dirs_for_images = ("spacex", "apod", "epic")
+    spacex_dir = "spacex"
+    apod_dir = "apod"
+    epic_dir = "epic"
+    dirs_for_images = (spacex_dir, apod_dir, epic_dir)
     for image_dir in dirs_for_images:
         if not os.path.exists(image_dir):
             os.makedirs(image_dir)
@@ -17,8 +20,8 @@ if __name__ == '__main__':
     bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
     seconds_in_one_day = 86400
     while True:
-        fetch_nasa.download_nasa_epic(nasa_token)
-        fetch_nasa.download_nasa_apod(nasa_token)
-        fetch_spacex.fetch_last_launch()
-        upload_to_telegram.bot_settings(bot_token, chat_id)
+        fetch_nasa.download_nasa_epic(nasa_token, epic_dir)
+        fetch_nasa.download_nasa_apod(nasa_token, apod_dir)
+        fetch_spacex.fetch_last_launch(spacex_dir)
+        upload_to_telegram.bot_settings(bot_token, chat_id, dirs_for_images)
         upload_to_telegram.sleep(seconds_in_one_day)

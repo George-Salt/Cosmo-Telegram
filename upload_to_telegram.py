@@ -1,7 +1,4 @@
-from dotenv import load_dotenv
 from os import listdir
-from time import sleep
-import os
 import telegram
 import random
 

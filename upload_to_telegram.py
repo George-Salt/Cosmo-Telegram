@@ -8,7 +8,8 @@ import random
 
 def bot_settings(bot_token, chat_id, dirs):
     bot = telegram.Bot(token=bot_token)
-    bot.send_document(chat_id=chat_id, document=open(random_path(dirs), 'rb'))
+    with open(random_path(dirs), "rb") as file:
+        bot.send_document(chat_id=chat_id, document=file)
     return "Отправлено"
 
 

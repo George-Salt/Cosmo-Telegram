@@ -15,8 +15,6 @@ def download_nasa_epic(token, epic_dir):
         image_url = f"https://api.nasa.gov/EPIC/archive/natural/{epic_image_date}/png/{epic_image_name}.png"
         download_with_ext.download_image(epic_dir, f"{epic_dir}{image_num}", image_url, payload)
 
-    return "Загружено - EPIC"
-
 
 def download_nasa_apod(token, apod_dir):
     apod_url = f"https://api.nasa.gov/planetary/apod"
@@ -27,5 +25,3 @@ def download_nasa_apod(token, apod_dir):
     for image_num, image_url in enumerate(apod_images):
         image_url = apod_images[image_num]["url"]
         download_with_ext.download_image(apod_dir, f"{apod_dir}{image_num}", image_url)
-
-    return "Загружено - APOD"

@@ -3,8 +3,8 @@ import download_with_ext
 
 
 def fetch_last_launch(spacex_dir):
-    spaceX_url = "https://api.spacexdata.com/v4/launches/latest"
-    response = requests.get(spaceX_url)
+    spacex_url = "https://api.spacexdata.com/v4/launches/latest"
+    response = requests.get(spacex_url)
     latest_launch_images = response.json()["links"]["flickr"]["original"]
 
     for image_num, image_url in enumerate(latest_launch_images):

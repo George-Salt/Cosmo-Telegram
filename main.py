@@ -11,8 +11,7 @@ if __name__ == '__main__':
     epic_dir = "epic"
     dirs_for_images = (spacex_dir, apod_dir, epic_dir)
     for image_dir in dirs_for_images:
-        if not os.path.exists(image_dir):
-            os.makedirs(image_dir)
+        os.makedirs(image_dir, exist_ok=True)
 
     load_dotenv()
     chat_id = os.getenv("TG_CHAT_ID")
@@ -23,5 +22,5 @@ if __name__ == '__main__':
         fetch_nasa.download_nasa_epic(nasa_token, epic_dir)
         fetch_nasa.download_nasa_apod(nasa_token, apod_dir)
         fetch_spacex.fetch_last_launch(spacex_dir)
-        upload_to_telegram.bot_settings(bot_token, chat_id, dirs_for_images)
+        upload_to_telegram.send_picture(bot_token, chat_id, dirs_for_images)
         upload_to_telegram.sleep(seconds_in_one_day)

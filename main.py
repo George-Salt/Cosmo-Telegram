@@ -5,7 +5,7 @@ import upload_to_telegram
 import os
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     spacex_dir = "spacex"
     apod_dir = "apod"
     epic_dir = "epic"

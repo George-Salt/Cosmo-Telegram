@@ -1,6 +1,7 @@
 from os import listdir
-import telegram
 import random
+
+import telegram
 
 
 def send_picture(bot_token, chat_id, dirs):

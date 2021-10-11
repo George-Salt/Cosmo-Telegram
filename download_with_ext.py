@@ -1,6 +1,7 @@
-from urllib.parse import urlparse
-import requests
 import os
+
+import requests
+from urllib.parse import urlparse
 
 
 def download_image(directory, name, image_url, payload={}):

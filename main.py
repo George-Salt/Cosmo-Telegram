@@ -1,8 +1,10 @@
+import os
+
 from dotenv import load_dotenv
+
 import fetch_nasa
 import fetch_spacex
 import upload_to_telegram
-import os
 
 
 if __name__ == "__main__":

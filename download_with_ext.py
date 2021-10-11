@@ -4,7 +4,7 @@ import requests
 from urllib.parse import urlparse
 
 
-def download_image(directory, name, image_url, payload={}):
+def download_image(directory, name, image_url, payload=None):
     filepath = f"{directory}/{name}{get_extension(image_url)}"
 
     response = requests.get(image_url, params=payload)

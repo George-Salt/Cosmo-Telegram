@@ -1,4 +1,5 @@
 import os
+from time import sleep
 
 from dotenv import load_dotenv
 
@@ -25,4 +26,4 @@ if __name__ == "__main__":
         fetch_nasa.download_nasa_apod(nasa_token, apod_dir)
         fetch_spacex.fetch_last_launch(spacex_dir)
         upload_to_telegram.send_picture(bot_token, chat_id, images_dirs)
-        upload_to_telegram.sleep(seconds_in_one_day)
+        sleep(seconds_in_one_day)

@@ -9,9 +9,9 @@ def download_nasa_epic(token, epic_dir):
 
     response = requests.get(epic_url, params=payload)
     response.raise_for_status()
-    images_description = response.json()
+    image_descriptions = response.json()
 
-    for image_num, image in enumerate(images_description[:10]):
+    for image_num, image in enumerate(image_descriptions[:10]):
         epic_image_name = image["image"]
         epic_image_date = image["date"][:10].replace("-", "/")
         image_url = f"https://api.nasa.gov/EPIC/archive/natural/{epic_image_date}/png/{epic_image_name}.png"

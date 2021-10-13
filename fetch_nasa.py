@@ -14,8 +14,15 @@ def download_nasa_epic(token, epic_dir):
     for image_num, image in enumerate(image_descriptions[:10]):
         epic_image_name = image["image"]
         epic_image_date = image["date"][:10].replace("-", "/")
-        image_url = f"https://api.nasa.gov/EPIC/archive/natural/{epic_image_date}/png/{epic_image_name}.png"
-        download_with_ext.download_image(epic_dir, f"{epic_dir}{image_num}", image_url, payload)
+        image_url = "https://api.nasa.gov/EPIC/"\
+                    f"archive/natural/{epic_image_date}"\
+                    f"/png/{epic_image_name}.png"
+        download_with_ext.download_image(
+            epic_dir,
+            f"{epic_dir}{image_num}",
+            image_url,
+            payload
+        )
 
 
 def download_nasa_apod(token, apod_dir):
@@ -27,4 +34,8 @@ def download_nasa_apod(token, apod_dir):
 
     for image_num, image_url in enumerate(apod_images):
         image_url = apod_images[image_num]["url"]
-        download_with_ext.download_image(apod_dir, f"{apod_dir}{image_num}", image_url)
+        download_with_ext.download_image(
+            apod_dir,
+            f"{apod_dir}{image_num}",
+            image_url
+        )

@@ -8,7 +8,7 @@ def download_nasa_epic(token, epic_dir):
     payload = {"api_key": token}
 
     response = requests.get(epic_url, params=payload)
-    response.raise_for_status
+    response.raise_for_status()
     images_description = response.json()
 
     for image_num, image in enumerate(images_description[:10]):
@@ -22,7 +22,7 @@ def download_nasa_apod(token, apod_dir):
     apod_url = f"https://api.nasa.gov/planetary/apod"
     payload = {"count": 30, "api_key": token}
     response = requests.get(apod_url, params=payload)
-    response.raise_for_status
+    response.raise_for_status()
     apod_images = response.json()
 
     for image_num, image_url in enumerate(apod_images):
